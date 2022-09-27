@@ -1,22 +1,26 @@
 const enterBtn = document.getElementById("enter");
-let textInput = document.querySelector("#new-todo");
 
 
 
 
 enterBtn.addEventListener("click",()=>{
-        listItem = document.createElement("li");
-        listItem.innerText = textInput.value;
-        let list = document.querySelector(".list");
+        const list = document.querySelector(".list");
+        const inputText = document.querySelector("#new-todo").value;
+
+        const listItem = document.createElement("li");
+        listItem.innerText = inputText;
+
         list.appendChild(listItem)
-        let deleteBtn = document.createElement("button");
+
+        const deleteBtn = document.createElement("button");
         deleteBtn.innerText = "Delete";
-        list.appendChild(deleteBtn);
+        
+        listItem.appendChild(deleteBtn);
 
         deleteBtn.addEventListener("click",()=>{
             list.removeChild(listItem);
-            list.removeChild(deleteBtn);
         })
+
 });
 
 
